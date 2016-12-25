@@ -34,13 +34,25 @@ class Luhn {
 				
 		}
 		
-		$delta = ceil($sum / 10) * 10 - $sum;
-		$checksum = $delta == 10 ? 0 : $delta;
+		$dif = ceil($sum / 10) * 10 - $sum;
 		
-		$this->checksum = $checksum;
+		return $dif == 10 ? 0 : $dif;
 		
-		return $checksum;
 		
+	}
+	
+	public function random( $length = 10 ) {
+	
+		$output = '';
+		
+		for( $i = 0; $i < $length - 1; $i++ ) {
+		
+			$output .= rand( 0, 9 );
+		
+		}
+		
+		return $output . $this->calculate( $output );
+	 
 	}
 		
 }
