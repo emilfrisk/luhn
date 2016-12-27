@@ -2,7 +2,6 @@
 Validate and calculate checksums with the Luhn algorithm.
 
 # Example
-
     require('Luhn.php');
 
     $luhn = new Emilfrisk\Luhn\Luhn();
@@ -14,3 +13,7 @@ Validate and calculate checksums with the Luhn algorithm.
     var_dump( $luhn->calculate( '128681375' ) ); //1
     var_dump( $luhn->calculate( '623271031' ) ); //6
     var_dump( $luhn->calculate( '427972764' ) ); //0
+
+    var_dump( $luhn->random() ); //2962723223
+    var_dump( $luhn->random() ); //4420782577
+    var_dump( $luhn->random( 3 ) ); //794
