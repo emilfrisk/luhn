@@ -25,7 +25,7 @@ class Luhn {
 	
 	public function calculate( $input ) {
 			
-		for( $sum = 0, $i=0, $l = strlen($input) - 1; $l >= 0; $i++, $l-- ) {
+		for( $sum = 0, $i=0, $l = strlen( $input ) - 1; $l >= 0; $i++, $l-- ) {
 			
 			$t = $input[$l]  * ( $i % 2 == 0 ? 2 : 1 ) ;	
 			$t = $t > 9 ? $t - 9 : $t;
@@ -34,7 +34,7 @@ class Luhn {
 				
 		}
 		
-		$dif = ceil($sum / 10) * 10 - $sum;
+		$dif = ceil( $sum / 10 ) * 10 - $sum;
 		
 		return $dif == 10 ? 0 : $dif;
 		
